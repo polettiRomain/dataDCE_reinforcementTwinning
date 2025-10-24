@@ -1,0 +1,11 @@
+This folder contains the data needed to reproduce Figures 4 and 5. 
+
+"offlineTraining_models.py" contains the model weights from Equation (4.10) obtained after an offline training. The offline training is using the adjoint method (Equations (3.5) to (3.6)) starting from random weights close to zero. 
+In Equation (3.4), the reference trajectories are given by the Gaussian process sampling defined in Section 5.1 which gives the actions "aphi_gp.npy", "beta_gp.npy" and "aoff_gp.npy" (Ntraj x Npoints_per_traj).
+
+"*_M*.npy": contains the 80 test trajectories obtained for the different models with weights from "offlineTraining_models.py" (x,y,th(eta)). (NTesttraj x Npoints_per_traj)
+
+"*_true.npy" contains the 80 true/reference test trajectories obtained with Gaussian process sampling as explained in Section 5.1. (NTesttraj x Npoints_per_traj)
+
+
+

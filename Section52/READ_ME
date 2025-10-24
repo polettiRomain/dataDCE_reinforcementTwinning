@@ -1,0 +1,9 @@
+"policyWeights.npy" gathers the policy weights (Equation (2.6)) after training with the RT algorithm. (Fig. 7) 
+The training starts with pre-calibrated weights defined in the Section 5.1. 
+policyWeights: 25 x 21
+The 21 weights are ordered as [wa_Aphi, b_Aphi, wa_beta, b_beta, wa_Aoff, b_Aoff].
+
+
+
+
+

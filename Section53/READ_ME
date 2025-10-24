@@ -1,0 +1,20 @@
+"cumRew.npy" contains the cumulative reward from the MF, MB, RT-max variance and RT-min error training (in this order). (Fig 8) 
+It has the following structure: 
+cumRew: Ncases x (Nseeds x (Nep)))
+        4      x (25     x (250)))
+
+"modelFailure.npy" contains an on/off flag indicating whether the model has failed and "policyType.npy" is a flag=1 if the live policy is MF and 0 otherwise (2 x (25 x (250))). The results on Figure 8 are a smooth average (over 4 episodes) of the average reward (over the 25 cases). (Fig 8) 
+
+"q.npy" contains the qvalue (averaged from the minibatch) during the training for the 3 cases involving MF. (Fig 10)
+
+"Jp.npy" contains the assimilation cost during the training for the 2 RT cases. (Fig 10)
+
+"Daup.npy" is an on/off flag indicating whether the assimilation buffer was updated at each episode of the training. (Fig 10)
+
+"s_maxVar.npy" and "s_minErr.npy" contains the time series of the position states (x, z and theta), contained in the assimilation buffer after the training following the RT-max variance and RT-min error respectively. (Fig 9)
+s_maxVar: Ncases x (NtrajInBuffer x (Npoints x (NposState)))
+          25     x (5             x (30      x (3)))
+
+For completeness, "policyWeights.npy" gathers the policy weights (Equation (2.6)) after training. 
+policyWeights: 4 x (25 x (21))
+The 21 weights are ordered as [wa_Aphi, b_Aphi, wa_beta, b_beta, wa_Aoff, b_Aoff].

@@ -1,0 +1,10 @@
+"cumRew.npy" contains the cumulative reward from the RT-max variance and RT-min error training. (Fig 11) 
+It has the following structure: 
+cumRew: Ncases x (Nseeds x (Nep))
+        2      x (25     x (250))
+
+"modelFailure.npy" contains an on/off flag indicating whether the model has failed and "policyType.npy" is a flag=1 if the live policy is MF and 0 otherwise (same structure as cumRew). The results on Figure 11 are a smooth average (over 4 episodes) of the average reward (over the 25 cases). (Fig 11) 
+
+"policyWeights.npy" gathers the policy weights (Equation (2.6)) after training. (Fig 11)  
+policyWeights: 2 x (25 x (21))
+The 21 weights are ordered as [wa_Aphi, b_Aphi, wa_beta, b_beta, wa_Aoff, b_Aoff].
